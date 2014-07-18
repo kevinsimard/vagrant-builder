@@ -1,0 +1,11 @@
+-
+    ip: 192.168.0.100
+    cpus: 1
+    swap: 1024
+    memory: 512
+    hostname: web1
+    provisions:
+        - nginx
+        - mysql
+        - php-cli
+        - php-fpm
