@@ -48,7 +48,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                         end
                     end
 
-                    if File.exists?("provisions/#{provision}.sh") then
+                    if File.exists?("provisions/#{provision}.sh")
                         config.vm.provision :shell, :path => "provisions/#{provision}.sh", :args => args
                     end
                 end
