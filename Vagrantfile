@@ -37,7 +37,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             end
 
             # configure pre provision
-            config.vm.provision :shell, :path => "provisions/pre.sh"
+            config.vm.provision :shell, :path => "provisions/scripts/pre.sh"
 
             # configure provisions
             if machine.has_key?("provisions")
@@ -55,7 +55,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             end
 
             # configure post provision
-            config.vm.provision :shell, :path => "provisions/post.sh"
+            config.vm.provision :shell, :path => "provisions/scripts/post.sh"
         end
     end
 end
