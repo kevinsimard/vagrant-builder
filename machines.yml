@@ -5,7 +5,7 @@
     memory: 512
     hostname: web1
     provisions:
-        - nginx
-        - mysql
-        - php-cli
-        - php-fpm
+        nginx:
+        mysql:
+        php-cli:
+        php-fpm:

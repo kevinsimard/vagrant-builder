@@ -41,9 +41,15 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
             # configure provisions
             if machine.has_key?("provisions")
-                machine["provisions"].each do |provision|
+                machine["provisions"].each do |provision, options| args = []
+                    if !options.nil?
+                        options.each do |key, value|
+                            args.push key.to_s, value.to_s
+                        end
+                    end
+
                     if File.exists?("provisions/#{provision}.sh") then
-                        config.vm.provision :shell, :path => "provisions/#{provision}.sh"
+                        config.vm.provision :shell, :path => "provisions/#{provision}.sh", :args => args
                     end
                 end
             end
