@@ -36,6 +36,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                 end
             end
 
+            # configure Swap file
+            config.vm.provision :shell, :path => "provisions/scripts/swap.sh",
+                :args => [machine["swap"].to_s ||= "1024"]
+
             # configure pre provision
             config.vm.provision :shell, :path => "provisions/scripts/pre.sh"
 
