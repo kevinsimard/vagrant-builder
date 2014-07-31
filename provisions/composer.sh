@@ -2,7 +2,7 @@
 
 # install requirements
 if ! which php > /dev/null; then
-    sh php-cli.sh
+    sh ./php.sh
 fi
 
 # download and install composer.phar to /usr/bin directory
