@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-if ! type -p rvm > /dev/null; then
+if which rvm > /dev/null; then
     # updating Ruby Version Manager
     rvm get stable --ignore-dotfiles
 else
