@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # install requirements
-if type -p php > /dev/null; then
+if ! which php > /dev/null; then
     sh php-cli.sh
 fi
 
