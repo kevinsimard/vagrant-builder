@@ -2,7 +2,7 @@
 
 if which rvm > /dev/null; then
     # install requirements
-    apt-get install libv8-dev
+    apt-get install -qq libv8-dev
 
     # install Jekyll
     gem install jekyll

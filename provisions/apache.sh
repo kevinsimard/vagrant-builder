@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 # install Apache
-apt-get install -y apache2
+apt-get install -qq apache2

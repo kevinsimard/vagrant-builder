@@ -4,10 +4,10 @@
 apt-get update
 
 # upgrade packages
-apt-get upgrade -y
+apt-get upgrade -qq
 
 # install essential packages
-apt-get install -y make automake openssl screen\
+apt-get install -qq make automake openssl screen\
     git-core curl build-essential htop unzip zip
 
 # add vagrant user to www-data group

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # install Redis server
-apt-get install -y redis-server
+apt-get install -qq redis-server
 
 # add persistent config
 tee -a /etc/redis/redis.conf << EOF

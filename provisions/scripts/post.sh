@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # remove unused packages
-apt-get autoremove -y
+apt-get autoremove -qq
 
 # upgrade distribution
-apt-get dist-upgrade -y
+apt-get dist-upgrade -qq

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # install MySQL server
-apt-get install -y mysql-server
+apt-get install -qq mysql-server
 
 # set username and password of MySQL to 'root'
 debconf-set-selections <<< "mysql-server mysql-server/root_password password root"
@@ -19,3 +19,4 @@ $MYSQL -uroot -proot -e "$SQL"
 
 # restart MySQL service
 service mysql restart
+
