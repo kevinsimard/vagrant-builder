@@ -11,14 +11,6 @@ if ! which php > /dev/null; then
     # set PHP5-FPM to listen on TCP instead of Socket
     sed -i "s/listen =.*/listen = 127.0.0.1:9000/" /etc/php5/fpm/pool.d/www.conf
 
-    # set run-as user for PHP5-FPM processes to user/group "vagrant"
-    # to avoid permission errors from apps writing to files
-    sed -i "s/user = www-data/user = vagrant/" /etc/php5/fpm/pool.d/www.conf
-    sed -i "s/group = www-data/group = vagrant/" /etc/php5/fpm/pool.d/www.conf
-    sed -i "s/listen\.owner.*/listen.owner = vagrant/" /etc/php5/fpm/pool.d/www.conf
-    sed -i "s/listen\.group.*/listen.group = vagrant/" /etc/php5/fpm/pool.d/www.conf
-    sed -i "s/listen\.mode.*/listen.mode = 0666/" /etc/php5/fpm/pool.d/www.conf
-
     # set xdebug config
     cat > $(find /etc/php5 -name xdebug.ini) << EOF
 zend_extension=$(find /usr/lib/php5 -name xdebug.so)
