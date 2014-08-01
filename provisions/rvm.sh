@@ -6,4 +6,7 @@ if which rvm > /dev/null; then
 else
     # install RVM and install latest stable Ruby version
     curl -sSL https://get.rvm.io | bash -s stable --ruby
+
+    # re-source user profiles
+    source /home/vagrant/.profile
 fi
