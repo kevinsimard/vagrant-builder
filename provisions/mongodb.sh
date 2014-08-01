@@ -13,7 +13,7 @@ apt-get install -qq mongodb-org
 
 if which php > /dev/null; then
     # install PHP extension
-    apt-get -qq install php5-mongo
+    apt-get install -qq php5-mongo
 
     # restart PHP5-FPM service
     service php5-fpm restart
