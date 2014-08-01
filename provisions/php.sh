@@ -5,7 +5,7 @@ if ! which php > /dev/null; then
     apt-get install -y php5-cli php5-fpm
 
     # install PHP5 extensions
-    apt-get install -y php5-mysql php5-pgsql php5-sqlite\
+    apt-get install -y php5-mysql php5-pgsql php5-sqlite php5-dev\
         php5-curl php5-gd php5-mcrypt php5-xdebug php5-memcached
 
     # set PHP5-FPM to listen on TCP instead of Socket
