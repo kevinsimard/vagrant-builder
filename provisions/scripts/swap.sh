@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # create Swap file
+echo -e "\e[1;34mCreating Swap file of $1MB...\e[0m"
 dd if=/dev/zero of=/swapfile bs=1024 count=$1k
 
 # create Swap area

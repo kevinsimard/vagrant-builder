@@ -1,10 +1,12 @@
 #!/usr/bin/env bash
 
 # set username and password of MySQL to 'root' when prompt
+echo -e "\e[1;34mWARNING: MySQL default password: 'root'\e[0m"
 debconf-set-selections <<< "mysql-server mysql-server/root_password password root"
 debconf-set-selections <<< "mysql-server mysql-server/root_password_again password root"
 
 # install MySQL server
+echo -e "\e[1;34mInstalling MySQL...\e[0m"
 apt-get install -qq mysql-server
 
 # enable remote access to MySQL from everywhere

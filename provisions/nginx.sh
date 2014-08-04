@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # install Nginx
+echo -e "\e[1;34mInstalling Nginx...\e[0m"
 apt-get install -qq nginx
 
 # turn off sendfile to be more compatible with Windows

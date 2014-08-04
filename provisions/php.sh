@@ -2,9 +2,11 @@
 
 if ! which php > /dev/null; then
     # install PHP5-CLI/FPM
+    echo -e "\e[1;34mInstalling PHP5...\e[0m"
     apt-get install -qq php5-cli php5-fpm
 
     # install PHP5 extensions
+    echo -e "\e[1;34mInstalling PHP5 extensions...\e[0m"
     apt-get install -qq php5-mysql php5-pgsql php5-sqlite php5-dev\
         php5-curl php5-gd php5-mcrypt php5-xdebug php5-memcached
 
@@ -21,4 +23,6 @@ xdebug.scream=0
 xdebug.cli_color=1
 xdebug.show_local_vars=1
 EOF
+else
+    echo -e "\e[1;34mWARNING: PHP is already installed!\e[0m"
 fi

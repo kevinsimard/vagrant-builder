@@ -9,10 +9,12 @@ echo "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" |\
 apt-get update -qq
 
 # install MongoDB server
+echo -e "\e[1;34mInstalling MongoDB...\e[0m"
 apt-get install -qq mongodb-org
 
 if which php > /dev/null; then
     # install PHP extension
+    echo -e "\e[1;34mInstalling MongoDB PHP extension...\e[0m"
     apt-get install -qq php5-mongo
 
     # restart PHP5-FPM service
