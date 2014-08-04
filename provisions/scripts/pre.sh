@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # update packages
-apt-get update
+apt-get update -qq
 
 # upgrade packages
 apt-get upgrade -qq

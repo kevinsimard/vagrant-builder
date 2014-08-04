@@ -6,7 +6,7 @@ echo "deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen" |\
     tee /etc/apt/sources.list.d/mongodb.list
 
 # update packages
-apt-get update
+apt-get update -qq
 
 # install MongoDB server
 apt-get install -qq mongodb-org
