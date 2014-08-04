@@ -1,4 +1,5 @@
 require "yaml"
+require "./plugins/reboot/vagrant-provision-reboot-plugin"
 VAGRANTFILE_API_VERSION = "2"
 options = YAML.load_file("options.yml")
 machines = YAML.load_file("machines.yml")
@@ -45,7 +46,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
             # configure provisions
             if machine.has_key?("provisions")
-                machine["provisions"].each do |provision, options| args = []
+                machine["provisions"] ||= [].each do |provision, options| args = []
                     if !options.nil?
                         options.each do |key, value|
                             args.push key.to_s, value.to_s
@@ -60,6 +61,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
             # configure post provision
             config.vm.provision :shell, :path => "provisions/scripts/post.sh"
+
+            # reboot the vm after provisions
+            config.vm.provision :unix_reboot
         end
     end
 end
