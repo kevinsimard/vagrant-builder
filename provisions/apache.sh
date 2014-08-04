@@ -22,8 +22,8 @@ cat > /etc/apache2/sites-available/localhost << EOF
         Require all granted
     </Directory>
 
-    ErrorLog \${APACHE_LOG_DIR}/localhost/error.log
-    CustomLog \${APACHE_LOG_DIR}/localhost/access.log combined
+    ErrorLog \${APACHE_LOG_DIR}/localhost-error.log
+    CustomLog \${APACHE_LOG_DIR}/localhost-access.log combined
 </VirtualHost>
 EOF
 
