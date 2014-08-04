@@ -8,6 +8,9 @@ SOURCE_STR="\n[[ -s /home/vagrant/.nvm/nvm.sh ]] && . /home/vagrant/.nvm/nvm.sh 
 echo -e $SOURCE_STR >> /home/vagrant/.profile
 source /home/vagrant/.profile
 
+# change owner of .nvm directory
+chown -R vagrant. /home/vagrant/.nvm/
+
 # get the latest version of Node from the home page
 NODEJS_VERSION=`nvm ls-remote | awk 'END{print}' $1`
 
