@@ -1,14 +1,14 @@
 require "yaml"
 require "./plugins/reboot/vagrant-provision-reboot-plugin"
+
 VAGRANTFILE_API_VERSION = "2"
-options = YAML.load_file("options.yml")
 machines = YAML.load_file("machines.yml")
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     machines.each do |machine|
         config.vm.define machine["hostname"] do |config|
             # configure the box
-            config.vm.box = machine["box"] ||= options["box"] ||= "ubuntu/trusty64"
+            config.vm.box = machine["box"] ||= "ubuntu/trusty64"
             config.vm.hostname = machine["hostname"]
 
             # configure a private network IP
