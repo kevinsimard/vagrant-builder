@@ -31,6 +31,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                 end
             end
 
+            # disable default /vagrant synced folder
+            config.vm.synced_folder ".", "/vagrant", disabled: true
+
             # configure the shared folders
             if machine.has_key?("folders")
                 machine["folders"].each do |folder|
