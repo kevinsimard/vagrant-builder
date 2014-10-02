@@ -4,7 +4,7 @@
 echo -e "\e[1;34mInstalling NVM...\e[0m"
 git clone https://github.com/creationix/nvm /home/vagrant/.nvm
 
-# Append NVM script to /home/vagrant/.profile
+# append NVM script to /home/vagrant/.profile
 SOURCE_STR="\n[[ -s /home/vagrant/.nvm/nvm.sh ]] && . /home/vagrant/.nvm/nvm.sh # Add NVM to PATH for scripting"
 echo -e $SOURCE_STR >> /home/vagrant/.profile
 source /home/vagrant/.profile
