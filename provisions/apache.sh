@@ -14,9 +14,9 @@ cat > /etc/apache2/sites-available/localhost << EOF
     ServerName localhost
     ServerAlias www.localhost.com
     ServerAdmin webmaster@localhost
-    DocumentRoot /var/www/html
+    DocumentRoot /var/www
 
-    <Directory /var/www/html>
+    <Directory /var/www>
         Options -Indexes +FollowSymLinks +MultiViews
         AllowOverride All
         Require all granted
