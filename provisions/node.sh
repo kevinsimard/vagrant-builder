@@ -30,5 +30,5 @@ npm install -g bower
 echo -e "\e[1;34mInstalling Grunt-CLI...\e[0m"
 npm install -g grunt-cli
 
-# re-source user profiles
+# reload user profile
 source /home/vagrant/.profile

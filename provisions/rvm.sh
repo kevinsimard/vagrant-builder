@@ -9,6 +9,6 @@ else
     echo -e "\e[1;34mInstalling RVM...\e[0m"
     curl -sSL https://get.rvm.io | bash -s stable --ruby
 
-    # re-source user profiles
+    # reload user profile
     source /home/vagrant/.profile
 fi
