@@ -1,13 +1,12 @@
 require "yaml"
-require "./plugins/reboot/vagrant-provision-reboot-plugin"
-
 VAGRANTFILE_API_VERSION = "2"
 machines = YAML.load_file("machines.yml")
+require "./plugins/reboot/vagrant-provision-reboot-plugin"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     machines.each do |machine|
         config.vm.define machine["hostname"] do |config|
-            # configure the box
+            # configure box
             config.vm.box = machine["box"] ||= "ubuntu/trusty64"
             config.vm.hostname = machine["hostname"]
 
@@ -16,11 +15,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
             # configure VirtualBox settings
             config.vm.provider :virtualbox do |vb|
-                vb.customize ["modifyvm", :id, "--name", machine["name"]]
-                vb.customize ["modifyvm", :id, "--cpus", machine["cpus"] ||= "1"]
-                vb.customize ["modifyvm", :id, "--memory", machine["memory"] ||= "512"]
-                vb.customize ["modifyvm", :id, "--natdnsproxy1", "on"]
-                vb.customize ["modifyvm", :id, "--natdnshostresolver1", "on"]
+                vb.customize["modifyvm", :id, "--name", machine["name"]]
+                vb.customize["modifyvm", :id, "--cpus", machine["cpus"] ||= "1"]
+                vb.customize["modifyvm", :id, "--memory", machine["memory"] ||= "512"]
+                vb.customize["modifyvm", :id, "--natdnsproxy1", "on"]
+                vb.customize["modifyvm", :id, "--natdnshostresolver1", "on"]
             end
 
             # configure port forwarding
@@ -34,7 +33,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             # disable default /vagrant synced folder
             config.vm.synced_folder ".", "/vagrant", disabled: true
 
-            # configure the shared folders
+            # configure shared folders
             if machine.has_key?("folders")
                 machine["folders"].each do |folder|
                     config.vm.synced_folder folder["map"],
