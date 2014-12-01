@@ -25,8 +25,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             # configure port forwarding
             if machine.has_key?('forwards')
                 machine['forwards'].each do |forward|
-                    config.vm.network 'forwarded_port',
-                        guest: forward['guest'], host: forward['host']
+                    config.vm.network 'forwarded_port', guest: forward['guest'], host: forward['host']
                 end
             end
 
@@ -36,8 +35,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             # configure shared folders
             if machine.has_key?('folders')
                 machine['folders'].each do |folder|
-                    config.vm.synced_folder folder['map'],
-                        folder['to'], type: folder['type'] ||= nil
+                    config.vm.synced_folder folder['map'], folder['to'], type: folder['type'] ||= nil
                 end
             end
 

@@ -28,8 +28,7 @@ cat > /etc/apache2/sites-available/localhost << EOF
 EOF
 
 # enable default site
-ln -s /etc/apache2/sites-available/localhost \
-    /etc/apache2/sites-enabled/localhost
+ln -s /etc/apache2/sites-available/localhost /etc/apache2/sites-enabled/localhost
 
 # restart apache2 service
 service apache2 restart

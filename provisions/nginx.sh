@@ -54,8 +54,7 @@ server {
 EOF
 
 # enable default site
-ln -s /etc/nginx/sites-available/localhost \
-    /etc/nginx/sites-enabled/localhost
+ln -s /etc/nginx/sites-available/localhost /etc/nginx/sites-enabled/localhost
 
 # restart Nginx service
 service nginx restart
