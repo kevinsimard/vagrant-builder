@@ -15,11 +15,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
             # configure VirtualBox settings
             config.vm.provider :virtualbox do |vb|
-                vb.customize['modifyvm', :id, '--name', machine['name']]
-                vb.customize['modifyvm', :id, '--cpus', machine['cpus'] ||= '1']
-                vb.customize['modifyvm', :id, '--memory', machine['memory'] ||= '512']
-                vb.customize['modifyvm', :id, '--natdnsproxy1', 'on']
-                vb.customize['modifyvm', :id, '--natdnshostresolver1', 'on']
+                vb.customize ['modifyvm', :id, '--name', machine['name'] ||= machine['hostname']]
+                vb.customize ['modifyvm', :id, '--cpus', machine['cpus'] ||= '1']
+                vb.customize ['modifyvm', :id, '--memory', machine['memory'] ||= '512']
+                vb.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
+                vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
             end
 
             # configure port forwarding
@@ -56,8 +56,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
                         end
                     end
 
-                    if File.exists?('provisions/#{provision}.sh')
-                        config.vm.provision :shell, :path => 'provisions/#{provision}.sh', :args => args
+                    if File.exists?("provisions/#{provision}.sh")
+                        config.vm.provision :shell, :path => "provisions/#{provision}.sh", :args => args
                     end
                 end
             end
