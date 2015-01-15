@@ -16,7 +16,7 @@ chown -R vagrant. /home/vagrant/.nvm/
 NODEJS_VERSION=`nvm ls-remote | awk 'END{print}' $1`
 
 # install Node
-echo -e '\e[1;34mInstalling Node $NODEJS_VERSION...\e[0m'
+echo -e "\e[1;34mInstalling Node $NODEJS_VERSION...\e[0m"
 nvm install $NODEJS_VERSION
 
 # set a default Node version

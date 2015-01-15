@@ -13,7 +13,7 @@ EOF
 # schedule background append rewriting
 if ! crontab -l | grep -q 'redis-cli bgrewriteaof'; then
     line='*/5 * * * * /usr/bin/redis-cli bgrewriteaof > /dev/null 2>&1'
-    (crontab -l; echo '$line' ) | crontab -
+    (crontab -l; echo "$line" ) | crontab -
 fi
 
 # restart Redis server
