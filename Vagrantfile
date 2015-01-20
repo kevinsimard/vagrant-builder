@@ -35,7 +35,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             # configure shared folders
             if machine.has_key?('folders')
                 machine['folders'].each do |folder|
-                    config.vm.synced_folder folder['map'], folder['to'], type: folder['type'] ||= nil
+                    config.vm.synced_folder folder['host'], folder['guest'], type: folder['type'] ||= nil
                 end
             end
 
