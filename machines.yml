@@ -6,5 +6,10 @@
     hostname: web1
     provisions:
         php:
+        composer:
+        node:
         mysql:
-        nginx:
+        apache:
+    forwards:
+        - guest: 80
+          host: 8080
