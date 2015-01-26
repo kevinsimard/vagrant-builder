@@ -12,17 +12,13 @@ rm /etc/apache2/sites-enabled/*
 rm /etc/apache2/sites-available/*
 
 # set default config file
-cat > /etc/apache2/sites-available/localhost << EOF
+cat > /etc/apache2/sites-available/localhost.conf << EOF
 <VirtualHost *:80>
-    ServerName localhost
-    ServerAlias www.localhost.com
-    ServerAdmin webmaster@localhost
-    DocumentRoot /var/www
+    DocumentRoot /var/www/html
 
-    <Directory /var/www>
-        Options -Indexes +FollowSymLinks +MultiViews
+    <Directory /var/www/html>
+        Options -Indexes
         AllowOverride All
-        Require all granted
     </Directory>
 
     ErrorLog \${APACHE_LOG_DIR}/localhost-error.log
@@ -31,7 +27,8 @@ cat > /etc/apache2/sites-available/localhost << EOF
 EOF
 
 # enable default site
-ln -s /etc/apache2/sites-available/localhost /etc/apache2/sites-enabled/localhost
+ln -s /etc/apache2/sites-available/localhost.conf \
+    /etc/apache2/sites-enabled/localhost.conf
 
 # restart apache2 service
 service apache2 restart
