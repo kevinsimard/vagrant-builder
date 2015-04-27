@@ -1,3 +1,0 @@
-[submodule "plugins/reboot"]
-    path = plugins/reboot
-    url = https://github.com/exratione/vagrant-provision-reboot
