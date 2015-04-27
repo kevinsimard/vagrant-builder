@@ -14,8 +14,8 @@ sed -i 's/# server_names_hash_bucket_size.*/server_names_hash_bucket_size 64;/' 
 rm /etc/nginx/sites-enabled/*
 rm /etc/nginx/sites-available/*
 
-# create web root directory
-mkdir /var/www && chown vagrant. /var/www
+# change /var/www owner
+chown vagrant. /var/www
 
 # set default config file
 cat > /etc/nginx/sites-available/localhost << EOF
