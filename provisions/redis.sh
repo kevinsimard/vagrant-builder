@@ -1,4 +1,4 @@
-z#!/usr/bin/env bash
+#!/usr/bin/env bash
 
 # install Redis server
 echo -e '\e[1;34mInstalling Redis...\e[0m'
