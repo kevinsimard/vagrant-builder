@@ -11,6 +11,9 @@ a2enmod rewrite
 rm /etc/apache2/sites-enabled/*
 rm /etc/apache2/sites-available/*
 
+# change /var/www owner
+chown vagrant. /var/www
+
 # set default config file
 cat > /etc/apache2/sites-available/localhost.conf << EOF
 <VirtualHost *:80>
