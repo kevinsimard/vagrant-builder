@@ -9,22 +9,22 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             config.vm.box = machine['box'] ||= 'ubuntu/trusty64'
             config.vm.hostname = machine['hostname']
 
-            # configure a private network IP
+            # configure private network ip
             config.vm.network :private_network, ip: machine['ip']
 
             # configure VirtualBox settings
             config.vm.provider :virtualbox do |vb|
                 vb.customize ['modifyvm', :id, '--name', machine['name'] ||= machine['hostname']]
                 vb.customize ['modifyvm', :id, '--cpus', machine['cpus'] ||= '1']
-                vb.customize ['modifyvm', :id, '--memory', machine['memory'] ||= '512']
+                vb.customize ['modifyvm', :id, '--memory', machine['memory'] ||= '1024']
                 vb.customize ['modifyvm', :id, '--natdnsproxy1', 'on']
                 vb.customize ['modifyvm', :id, '--natdnshostresolver1', 'on']
             end
 
             # configure port forwarding
-            if machine.has_key?('forwards')
-                machine['forwards'].each do |forward|
-                    config.vm.network 'forwarded_port', guest: forward['guest'], host: forward['host']
+            if machine.has_key?('ports')
+                machine['ports'].each do |port|
+                    config.vm.network 'forwarded_port', guest: port['to'], host: port['send']
                 end
             end
 
@@ -34,14 +34,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
             # configure shared folders
             if machine.has_key?('folders')
                 machine['folders'].each do |folder|
-                    config.vm.synced_folder folder['host'], folder['guest'], type: folder['type'] ||= nil,
+                    config.vm.synced_folder folder['map'], folder['to'], type: folder['type'] ||= nil,
                         owner: 'vagrant', group: 'www-data', :mount_options => ['dmode=775', 'fmode=664']
                 end
             end
 
             # configure Swap file
             config.vm.provision :shell, :path => 'provisions/scripts/swap.sh',
-                :args => [machine['swap'].to_s ||= '1024']
+                :args => [machine['swap'].to_s ||= '2048']
 
             # configure pre provision
             config.vm.provision :shell, :path => 'provisions/scripts/pre.sh'
