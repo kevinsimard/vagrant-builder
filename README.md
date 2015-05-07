@@ -1,5 +1,4 @@
 # Dynamic Vagrant Machines
-[![License](http://img.shields.io/:license-mit-blue.svg)](http://doge.mit-license.org)
 
 ## Installation
 > This structure utilizes [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/) to create virtual machines. So, before using it, you will need to make sure you have both of them installed on your machine.
@@ -76,6 +75,3 @@ vagrant provision
     ├── machines.yml
     ├── README.md
     └── Vagrantfile
-
-## License
-This builder is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
