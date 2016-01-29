@@ -52,26 +52,26 @@ vagrant provision
 ```
 
 ## Code Structure
-    ┌── provisions/
-    │   ├── scripts/
-    │   │   ├── post.sh
-    │   │   ├── pre.sh
-    │   │   └── swap.sh
-    │   ├── apache.sh
-    │   ├── beanstalkd.sh
-    │   ├── composer.sh
-    │   ├── haproxy.sh
-    │   ├── memcached.sh
-    │   ├── mongodb.sh
-    │   ├── mysql.sh
-    │   ├── nginx.sh
-    │   ├── node.sh
-    │   ├── php.sh
-    │   ├── redis.sh
-    │   ├── rvm.sh
-    │   └── supervisord.sh
+    ├── provisions
+    │   ├── scripts
+    │   │   ├── post.sh
+    │   │   ├── pre.sh
+    │   │   └── swap.sh
+    │   ├── apache.sh
+    │   ├── beanstalkd.sh
+    │   ├── composer.sh
+    │   ├── haproxy.sh
+    │   ├── memcached.sh
+    │   ├── mongodb.sh
+    │   ├── mysql.sh
+    │   ├── nginx.sh
+    │   ├── node.sh
+    │   ├── php.sh
+    │   ├── redis.sh
+    │   ├── rvm.sh
+    │   └── supervisord.sh
     ├── .gitattributes
     ├── .gitignore
-    ├── machines.yml
     ├── README.md
-    └── Vagrantfile
+    ├── Vagrantfile
+    └── machines.yml
