@@ -1,9 +1,11 @@
 # Dynamic Vagrant Machines
 
 ## Installation
+
 > This structure utilizes [Vagrant](https://www.vagrantup.com/) and [VirtualBox](https://www.virtualbox.org/) to create virtual machines. So, before using it, you will need to make sure you have both of them installed on your machine.
 
 Edit the macines.yml file to customize your machine(s).
+
 ```yml
 -
     ip: "192.168.10.10"
@@ -42,16 +44,19 @@ Edit the macines.yml file to customize your machine(s).
 * **_supervisord_**
 
 Run the following command to create/start your machine(s).
+
 ```bash
 vagrant up
 ```
 
 Run the following command to reprovision your machine(s).
+
 ```bash
 vagrant provision
 ```
 
 ## Code Structure
+
     ├── provisions
     │   ├── scripts
     │   │   ├── post.sh
@@ -70,8 +75,14 @@ vagrant provision
     │   ├── redis.sh
     │   ├── rvm.sh
     │   └── supervisord.sh
+    ├── .editorconfig
     ├── .gitattributes
     ├── .gitignore
+    ├── LICENSE.txt
     ├── README.md
     ├── Vagrantfile
     └── machines.yml
+
+## License
+
+This package is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
