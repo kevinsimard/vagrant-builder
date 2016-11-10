@@ -11,7 +11,7 @@ mkswap /swapfile
 swapon /swapfile
 
 # make Swap file permanent
-echo '/swapfile    none    swap    sw    0    0' | tee -a /etc/fstab
+echo "/swapfile    none    swap    sw    0    0" | tee -a /etc/fstab
 
 # set Swap swappiness to 10
 echo 10 | sudo tee /proc/sys/vm/swappiness
