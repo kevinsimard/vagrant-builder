@@ -46,13 +46,13 @@ Edit the macines.yml file to customize your machine(s).
 Run the following command to create/start your machine(s).
 
 ```bash
-vagrant up
+$ vagrant up
 ```
 
 Run the following command to reprovision your machine(s).
 
 ```bash
-vagrant provision
+$ vagrant provision
 ```
 
 ## Code Structure
