@@ -78,7 +78,7 @@ $ vagrant provision
     ├── .editorconfig
     ├── .gitattributes
     ├── .gitignore
-    ├── LICENSE.txt
+    ├── LICENSE.md
     ├── README.md
     ├── Vagrantfile
     └── machines.yml
